@@ -1,0 +1,324 @@
+/* Custom Styles for Inventory System */
+
+:root {
+    --primary-color: #27AE60;
+    --primary-dark: #1e8449;
+    --text-dark: #212121;
+    --text-muted: #BDBDBD;
+    --border-color: #E0E0E0;
+    --bg-light: #FAFAFA;
+}
+
+/* Login Page */
+.login-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.logo-icon {
+    width: 64px;
+    height: 64px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon-small {
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.card {
+    border-radius: 0.5rem;
+    border: none;
+}
+
+/* Sidebar */
+.sidebar-desktop {
+    position: sticky;
+    top: 57px; /* Altura del header */
+    height: calc(100vh - 57px);
+    overflow-y: auto;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+#main-content {
+    min-width: 0; /* Permite que el contenido se ajuste */
+    overflow-x: hidden; /* Evita scroll horizontal */
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    #main-content {
+        max-width: calc(100vw - 256px); /* Asegura que no se solape con el sidebar de 256px */
+    }
+}
+
+@media (max-width: 991px) {
+    #main-content {
+        max-width: 100vw; /* En móvil, el contenido ocupa todo el ancho */
+    }
+}
+
+.sidebar-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 49;
+}
+
+.sidebar-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 256px;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 50;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+    padding: 0.625rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+.menu-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.menu-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Avatar */
+.avatar-sm {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Badge */
+.badge-custom {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+/* Stats Cards */
+.stat-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.stat-card-title {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card-value {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Tables */
+.table-custom {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.table-custom thead {
+    background-color: var(--bg-light);
+}
+
+.table-custom tbody tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-custom tbody tr:hover {
+    background-color: var(--bg-light);
+}
+
+/* Buttons */
+.btn-success {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-success:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-outline-success {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-created { background-color: #6c757d; color: white; }
+.status-confirmed { background-color: #0d6efd; color: white; }
+.status-shipped { background-color: #fd7e14; color: white; }
+.status-delivered { background-color: #198754; color: white; }
+.status-cancelled { background-color: #dc3545; color: white; }
+
+.status-entry { background-color: #d1e7dd; color: #0f5132; }
+.status-exit { background-color: #f8d7da; color: #842029; }
+
+.severity-high { color: #dc3545; }
+.severity-medium { color: #fd7e14; }
+.severity-low { color: #ffc107; }
+
+/* Alert Card */
+.alert-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+}
+
+.alert-card.unread {
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Progress Bar */
+.progress-custom {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+.progress-bar-custom {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+/* Charts Container */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+/* Forms */
+.form-label {
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-control, .form-select {
+    border-color: var(--border-color);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(39, 174, 96, 0.25);
+}
+
+/* Cards */
+.card-custom {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.card-header-custom {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Modals */
+.modal-content {
+    border-radius: 0.5rem;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Loading Spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.15em;
+}
+
+/* Utilities */
+.text-primary-custom {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary-custom {
+    background-color: var(--primary-color) !important;
+}
+
+.border-primary-custom {
+    border-color: var(--primary-color) !important;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
